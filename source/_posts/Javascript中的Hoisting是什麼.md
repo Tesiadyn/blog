@@ -11,7 +11,7 @@ tags:
 
 ## Hoisting是什麼？
 
-hoisting是指Javascript在實際執行code之前，先將變數跟函數的宣告分配到記憶體中的現象，看起來「像是」宣告的部分被移動到了最上方，但實際上沒有任何程式碼被移動。以下來看例子：
+Hoisting是指Javascript在實際執行code之前，先將變數跟函數的宣告分配到記憶體中的現象，看起來「像是」宣告的部分被移動到了最上方，但實際上沒有任何程式碼被移動。以下來看例子：
 
 如果今天我們想對一個尚未被宣告過的變數取值，會像以下這樣：
 
@@ -78,11 +78,11 @@ function z(){};
 // [Function: z]
 ```
 
-function的宣告同樣也會發生hoisting，並且優先順序比變數的還要更高。
+function的宣告同樣也會發生Hoisting，並且優先順序比變數的還要更高。
 
-## let, const也有hoisting嗎？
+## let, const也有Hoisting嗎？
 
-現在多半比較少在使用var來宣告變數，而是使用let或const，那麼這兩個也會發生hoisting嗎？
+現在多半比較少在使用var來宣告變數，而是使用let或const，那麼這兩個也會發生Hoisting嗎？
 
 let跟const的行為類似，因此只用let舉例。
 
@@ -93,7 +93,7 @@ let x = 5;
 // ReferenceError: Cannot access 'x' before initialization
 ```
 
-以上的例子來看let跟const似乎沒有hoisting，但真的是這樣嗎？
+以上的例子來看let跟const似乎沒有Hoisting，但真的是這樣嗎？
 
 ```jsx
 var a = 10
@@ -106,7 +106,7 @@ test()
 // ReferenceError: Cannot access 'a' before initialization
 ```
 
-在以上的例子中，如果let沒有發生hoisting，照理來說應該會輸出10。也就是說let跟const其實也有hoisting，只是跟var在行為上不太一樣。以下節錄自w3school：
+在以上的例子中，如果let沒有發生Hoisting，照理來說應該會輸出10。也就是說let跟const其實也有Hoisting，只是跟var在行為上不太一樣。以下節錄自w3school：
 
 > Variables defined with `let` and `const` are hoisted to the top of the block, but not *initialized*.
 > 
@@ -153,9 +153,9 @@ const driverName;
 
 使用const的情況則不會印出Start。
 
-## 為什麼會有hoisting?
+## 為什麼會有Hoisting?
 
-大多數人初學程式語言時，大概都會聽說過“程式碼是逐行執行”這個說法，那麼為什麼會有hoisting這樣的特性存在呢？原因大概有以下幾點：
+大多數人初學程式語言時，大概都會聽說過“程式碼是逐行執行”這個說法，那麼為什麼會有Hoisting這樣的特性存在呢？原因大概有以下幾點：
 
 ### 讓function的互相呼叫可以成立
 
@@ -174,15 +174,15 @@ function funcB(n) {
 funcA(10)
 ```
 
-如果沒有hoisting，以上程式碼就不可能運作，因為我們無法同時達成funcA在funcB上面，而funcB又在funcA上面。
+如果沒有Hoisting，以上程式碼就不可能運作，因為我們無法同時達成funcA在funcB上面，而funcB又在funcA上面。
 
 ### 不需先宣告function才能使用
 
 這個特性讓我們可以不需要在大量定義function的程式碼下面嘗試呼叫function，而是在一開始的地方就先呼叫，因此可以讓程式碼整體的可讀性變得更好。
 
-## hoisting的運作方式
+## Hoisting的運作方式
 
-在理解hoisting的運作方式之前，我們需要先認識Execution Context(以下稱EC)跟Variable Object(以下稱VO)。
+在理解Hoisting的運作方式之前，我們需要先認識Execution Context(以下稱EC)跟Variable Object(以下稱VO)。
 
 Execution Context 是 JavaScript 引擎在執行程式碼時所建立的一個環境。當 JavaScript 引擎執行一段程式碼時,它會先創建一個全域的 Execution Context,稱為 Global Execution Context。之後每當遇到一個function呼叫,引擎就會為該function創建一個新的 Execution Context。Variable Object 包含了該 Execution Context 中所有的變數和函式聲明。在創建階段,Variable Object 會先被初始化,之後在執行階段會被賦值。因此function所需的大部分東西都會存在Variable Object裡面，創建階段（還沒有開始跑程式碼的時候），會依序做以下三件事：
 
@@ -381,10 +381,10 @@ JS 引擎：global scope，我這裡有個對 d 的 RHS 引用，你有看過它
 
 參考資料
 
-[我知道你懂 hoisting，可是你了解到多深？](https://github.com/aszx87410/blog/issues/34)
+[我知道你懂 Hoisting，可是你了解到多深？](https://github.com/aszx87410/blog/issues/34)
 
 [MDN Hoisting](https://developer.mozilla.org/zh-TW/docs/Glossary/Hoisting)
 
 延伸閱讀
 
-[W3School Hoisting](https://www.w3schools.com/js/js_hoisting.asp)
+[W3School Hoisting](https://www.w3schools.com/js/js_Hoisting.asp)
