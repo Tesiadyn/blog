@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: Marce's notes
+subtitle: 'A treehouse of a front-end developer'
 description: ''
 keywords:
-author: John Doe
+author: Marce Hsu
 language: en
-timezone: ''
+timezone: 'Asia/Taipei'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -24,7 +24,7 @@ pretty_urls:
 source_dir: source
 public_dir: public
 tag_dir: tags
-archive_dir: archives
+archive_dir: articles
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
